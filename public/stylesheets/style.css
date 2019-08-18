@@ -9,12 +9,17 @@ body {
   margin: 0;
   height: 100vh;
   display: grid;
+  background-color: #e3fdfd;
   grid-template-rows: 100px 1fr;
   grid-template-areas: 
     "nav"
     "main"
 }
 
+.mongoose {
+  margin: 30px 0 5px 5px;
+  width: 120px;
+}
 header {
   width: 100%;
   height: 100px;
@@ -27,17 +32,14 @@ header {
 }
 
 .wrapper {
-  width: 1400px;
+  width: auto;
   margin: 0 auto;
 }
 
 header .logo {
-  display: grid;
-  column-span: 5;
-  padding: 0;
   float: left;
-  margin-top: 10px;
-  margin-bottom: 0px;
+  margin-top: 5px;
+  margin-left: 25px;
   font-family: 'Oleo Script Swash Caps', cursive;
   font-size: 45px;
   color: #3D484A;
@@ -56,8 +58,8 @@ header nav ul li {
 }
 header nav ul li a {
   text-decoration: none;
-  color: #333333;
-  font-size: 17px;
+  color: #3D484A;
+  font-size: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
   transition: all .2s linear;
@@ -80,12 +82,13 @@ header li:first-child {
 
 #slogan {
   margin-top: 2px;
+  padding: 0px;
   margin-bottom: 0px;
-  color: #0c0c0c;
-  font-size: 16px;
+  color: #3D484A;
+  font-size: 20px;
   display: block;
   font-family: 'Fjalla One', sans-serif;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-align: center;
 }
 
@@ -100,13 +103,15 @@ body > main {
 }
 
 body > main h1:first-child {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 50px;
   margin-bottom: 50px;
 }
 
 #new-form {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 15rem));
+  grid-template-columns: repeat(2, minmax(auto, 20rem));
 }
 
 #new-form * {
@@ -117,7 +122,7 @@ body > main h1:first-child {
 
 #new-form input[type="submit"] {
   grid-column: span 2;
-  width: 10rem;
+  width: 12rem;
   margin-left: auto;
 }
 
@@ -136,7 +141,7 @@ table td {
 }
 
 #list td:nth-child(2), #list td:nth-child(3){
-  min-width: 100px;
+  min-width: 120px;
 }
 
 #list a {
@@ -163,4 +168,19 @@ table td {
 
 a, table{
    font-family: 'Fjalla One', sans-serif;
+}
+
+h2 {
+  font-size: 60px;
+  text-align: center;
+  margin: 20px 0 0 0;
+  padding: 0px;
+}
+
+.error {
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
 }

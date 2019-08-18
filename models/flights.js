@@ -10,6 +10,7 @@ var destinationSchema = new Schema({
 
 var flightSchema = new Schema({
   airline: String,
+  airport: String,
   flightNo: {
     type: Number,
     required: true,
@@ -17,7 +18,7 @@ var flightSchema = new Schema({
     max: 9999
     },
   departs: String,
-  airport: [destinationSchema]
+  destination: [destinationSchema]
 },{
   timestamps: true
 });
