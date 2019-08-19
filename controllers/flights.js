@@ -1,5 +1,6 @@
 
 var Flight = require('../models/flight');
+var Destinations = require('../models/flight');
 var Ticket = require('../models/ticket');
 
 module.exports = {
@@ -17,12 +18,13 @@ function index(req, res) {
 
 function show(req, res) {
   Flight.findById(req.params.id)
-  .populate('details').exec(function(err, flight) {
-    Ticket.find({_id: {$nin: flight.details}})
+  .populate('destination').exec(function(err, flight) {
+    Ticket.find({_id: {$nin: flight.destination}})
+    Destinations.find({_id: {$nin: flight.destination}})
     .exec(function(err, tickets) {
-      console.log(tickets);
+      // console.log(tickets);
       res.render('flights/show', {
-        title: 'Flight Detail', flight, tickets
+        title: 'Flight Details', flight, tickets
       });
     });
   });

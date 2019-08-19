@@ -102,25 +102,30 @@ body > main {
   overflow-y: scroll;
 }
 
-body > main h1:first-child {
+h1 {
   font-family: 'Oleo Script Swash Caps', cursive;
   font-size: 50px;
   margin-bottom: 50px;
 }
 
-#new-form {
+h3 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 30px;
+}
+
+#new-form, #add-destination {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 20rem));
 }
 
-#new-form * {
+#new-form *, #add-destination * {
   font-size: 20px;
   padding: 5px;
   border-radius: 2px;
 }
 
-#new-form input[type="submit"] {
+#new-form input[type="submit"], #add-destination input[type="submit"]{
   grid-column: span 2;
   width: 12rem;
   margin-left: auto;
@@ -185,7 +190,7 @@ h2 {
   margin-top: 20px;
 }
 
-/* .credit {
+.credit {
   font-size: 600px;
   text-align: right;
-} */
+}

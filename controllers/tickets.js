@@ -16,12 +16,13 @@ function addToFlight(req, res) {
   });
 }
 
+
 function create(req, res) {
   req.body.flight = req.params.id;
   Ticket.create(req.body, function (err, tickets) {  
     var newTicket = new Ticket(req.body);
     newTicket.save(function(err, result) {
-        res.redirect(`/flights`);
+        res.redirect(`/tickets/new`);
     })
   });
 }
