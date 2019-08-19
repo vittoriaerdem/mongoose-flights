@@ -4,20 +4,27 @@ var Schema = mongoose.Schema;
 var destinationSchema = new Schema({
   airport: String,
   arrival: Date,
-},{
-  timestamps: true
 });
 
 var flightSchema = new Schema({
-  airline: String,
-  airport: String,
+  airline: {
+    type: String,
+    required: true,
+    enum: ['United', 'Southwest', 'Delta']
+  },
   flightNo: {
     type: Number,
     required: true,
     min: 10,
     max: 9999
-    },
-  departs: String,
+  },
+  departs: {
+    type: Date,
+    default: function () {
+      var date = new Date();
+      date.setFullYear(date.getFullYear() + 1)
+      return date.toLocaleDateString();}
+  },
   destination: [destinationSchema]
 },{
   timestamps: true
