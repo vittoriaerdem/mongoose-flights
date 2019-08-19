@@ -6,12 +6,19 @@
       <div>Flight No.: </div>
       <div><%= flight.flightNo %></div>
       <div>Depature Date: </div>
-      <div><%= flight.depature %></div>
+      <div><%= flight.departs %></div>
+      <div>Destination: </div>
+      <div><%= flight.destination %></div>
+      <div>Airport: </div>
+      <div><%= flight.airport %></div>
+      <div>Arrival: </div>
+      <div><%= flight.arrival %></div>
     </section>
 
     <br>
-
-  <form id='destination' method="POST" action='/flights/<%= flights._id %>/destinations'>
+    <br>
+    
+  <form id="add-destination" action="/flights/<%= flight._id%>/destinations" method="POST">
     <label> Destination:</label>
     <select name="destAirport">
         <option value="AUS">AUS</option>

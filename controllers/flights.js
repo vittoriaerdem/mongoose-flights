@@ -16,11 +16,16 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Flight.findById(req.params.id, function(err, flights) {
-    Ticket.find({flight: flights._id}, function(err, tickets) {
-      res.render('flights/detail', { title: 'Flight Detail', flights, tickets});
-    })
-  })
+  Flight.findById(req.params.id)
+  .populate('details').exec(function(err, flight) {
+    Ticket.find({_id: {$nin: flight.details}})
+    .exec(function(err, tickets) {
+      console.log(tickets);
+      res.render('flights/show', {
+        title: 'Flight Detail', flight, tickets
+      });
+    });
+  });
 }
 
 function newFlight(req, res) {
